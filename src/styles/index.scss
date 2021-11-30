@@ -3,6 +3,7 @@ $body-color: slateblue;
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #container {
@@ -31,7 +32,6 @@ body {
 }
 
 #info {
-  font-family: 'Courier New', Courier, monospace;
   color: #f2f;
   position: absolute;
   top: 0;
@@ -45,4 +45,15 @@ body {
   user-select: none;
   pointer-events: none;
   z-index: 1; /* TODO Solve this in HTML */
+}
+
+#loader {
+  z-index: 1;
+  position: absolute;
+  font-size: 100px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  width: 100px;
+  color: #f2f;
 }

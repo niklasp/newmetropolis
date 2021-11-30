@@ -13,7 +13,7 @@ import VideoElement from './VideoElement';
 import theFont from '../static/font3.json';
 // import metropolisModel from '../static/untitled2.gltf';
 // import metropolisModel from '../static/city2.glb';
-import metropolisModel from '../static/new/untitled.gltf';
+import metropolisModel from '../static/new/untitled.glb';
 
 // import metropolisBin from '../static/scene.bin';
 // import environment from '../static/royal_esplanade_1k.hdr';
@@ -299,8 +299,9 @@ export default class Sketch {
 
       // },
       const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath( '/src/static/draco_javascript/' );
-
+      dracoLoader.setDecoderConfig({ type: 'js' });
+      dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+      const loader = document.getElementById('loader');
       that.loader = new GLTFLoader();
       that.loader.setDRACOLoader( dracoLoader );
       that.loader.load( metropolisModel, function ( gltf ) {
@@ -338,10 +339,12 @@ export default class Sketch {
         that.city.geometry.center();
 
         that.scene.add( that.city );
+        loader.style.display = 'none';
       },
       function ( xhr ) {
 
         console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+        loader.innerText =( xhr.loaded / xhr.total * 100 ).toFixed(0) + '%';
     
       },
       // called when loading has errors
