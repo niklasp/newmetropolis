@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# production
+build
+public
+
+# misc
+.DS_Store
+
+npm-debug.log
+yarn-error.log
+yarn.lock
+.yarnclean
+.vscode
+.idea
+
+*.blend
+*.blend1
