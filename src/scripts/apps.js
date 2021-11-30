@@ -5,7 +5,7 @@ import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockCont
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
-import { RoughnessMipmapper } from 'three/examples/jsm/utils/RoughnessMipmapper.js';
+// import { RoughnessMipmapper } from 'three/examples/jsm/utils/RoughnessMipmapper.js';
 
 import * as dat from 'dat.gui';
 import VideoElement from './VideoElement';
@@ -270,7 +270,7 @@ export default class Sketch {
       that.render();
 
       //model
-      const roughnessMipmapper = new RoughnessMipmapper( that.renderer );
+      // const roughnessMipmapper = new RoughnessMipmapper( that.renderer );
       // that.loader = new DRACOLoader();
       // that.loader.setDecoderPath( '/src/static/draco_javascript/' );
       // that.loader.preload();
@@ -333,7 +333,7 @@ export default class Sketch {
           }
           }
         } );
-        roughnessMipmapper.dispose();
+        // roughnessMipmapper.dispose();
 
         that.city = gltf.scene.children[2];
         that.city.geometry.center();
